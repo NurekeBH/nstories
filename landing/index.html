@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ApiPay.kz — Kaspi Pay төлемдерін автоматтандыратын REST API</title>
-<meta name="description" content="ApiPay — Kaspi Pay үшін REST API. Телефон нөмірі бойынша шот қойыңыз, төлемді вебхук арқылы сол сәтте алыңыз, фискалдық чекті автоматты жіберіңіз. Сатудан 0% комиссия — тек тіркелген айлық төлем.">
-<meta name="keywords" content="Kaspi Pay API, Kaspi төлем API, ApiPay, онлайн төлем Қазақстан, эквайрингсіз төлем, 1С Kaspi Pay">
+<title data-i18n="meta.title">ApiPay.kz — Kaspi Pay төлемдерін автоматтандыратын REST API</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta.desc" content="ApiPay — Kaspi Pay үшін REST API. Телефон нөмірі бойынша шот қойыңыз, төлемді вебхук арқылы сол сәтте алыңыз, фискалдық чекті автоматты жіберіңіз. Сатудан 0% комиссия — тек тіркелген айлық төлем.">
+<meta name="keywords" content="Kaspi Pay API, Kaspi төлем API, ApiPay, онлайн төлем Қазақстан, эквайрингсіз төлем, 1С Kaspi Pay, Kaspi Pay API Казахстан">
 <link rel="canonical" href="https://apipay.kz/">
 
 <!-- Open Graph / Twitter -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="kk_KZ">
+<meta property="og:locale:alternate" content="ru_RU">
 <meta property="og:url" content="https://apipay.kz/">
 <meta property="og:site_name" content="ApiPay.kz">
-<meta property="og:title" content="Kaspi Pay төлемдерін автоматтандырыңыз — ApiPay.kz">
-<meta property="og:description" content="Телефон нөмірі бойынша шот, лезде вебхук, автоматты фискалдық чек. Ақша тікелей сіздің Kaspi Pay аккаунтыңызға түседі. Сатудан % алмаймыз.">
+<meta property="og:title" data-i18n-attr="content" data-i18n="meta.ogTitle" content="Kaspi Pay төлемдерін автоматтандырыңыз — ApiPay.kz">
+<meta property="og:description" data-i18n-attr="content" data-i18n="meta.ogDesc" content="Телефон нөмірі бойынша шот, лезде вебхук, автоматты фискалдық чек. Ақша тікелей сіздің Kaspi Pay аккаунтыңызға түседі. Сатудан % алмаймыз.">
 <!-- АУЫСТЫРЫҢЫЗ: нақты og-сурет сілтемесі -->
 <meta property="og:image" content="https://apipay.kz/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,6 +34,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "url": "https://apipay.kz/",
+  "inLanguage": ["kk", "ru"],
   "description": "Kaspi Pay үшін REST API: телефон нөмірі бойынша шот қою, вебхук арқылы төлем туралы хабарлама, фискалдық чек, қайтару және қайталанатын төлемдер.",
   "offers": [
     { "@type": "Offer", "name": "Start",    "price": "10000", "priceCurrency": "KZT" },
@@ -54,34 +56,42 @@
       <span>ApiPay<span class="logo__dot">.kz</span></span>
     </a>
 
-    <nav class="nav__links" aria-label="Негізгі мәзір">
-      <a href="#features">Мүмкіндіктер</a>
-      <a href="#how">Қалай жұмыс істейді</a>
-      <a href="#integrations">Интеграциялар</a>
-      <a href="#pricing">Тарифтер</a>
-      <a href="#faq">Сұрақтар</a>
+    <nav class="nav__links" aria-label="ApiPay">
+      <a href="#features"     data-i18n="nav.features">Мүмкіндіктер</a>
+      <a href="#how"          data-i18n="nav.how">Қалай жұмыс істейді</a>
+      <a href="#integrations" data-i18n="nav.integrations">Интеграциялар</a>
+      <a href="#pricing"      data-i18n="nav.pricing">Тарифтер</a>
+      <a href="#faq"          data-i18n="nav.faq">Сұрақтар</a>
     </nav>
 
     <div class="nav__actions">
+      <div class="lang" role="group" aria-label="Тіл / Язык">
+        <button class="lang__btn is-active" data-lang="kk" type="button">KZ</button>
+        <button class="lang__btn" data-lang="ru" type="button">RU</button>
+      </div>
       <!-- АУЫСТЫРЫҢЫЗ: кабинетке кіру сілтемесі -->
-      <a class="nav__login" href="https://apipay.kz/login">Кабинет</a>
-      <a class="btn btn--primary btn--sm" href="#start">Тегін кеңес алу</a>
+      <a class="nav__login" href="https://apipay.kz/login" data-i18n="nav.cabinet">Кабинет</a>
+      <a class="btn btn--primary btn--sm" href="#start" data-i18n="nav.cta">Тегін кеңес алу</a>
     </div>
 
-    <button class="burger" id="burger" aria-label="Мәзірді ашу" aria-expanded="false">
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <div class="container">
-      <a href="#features">Мүмкіндіктер</a>
-      <a href="#how">Қалай жұмыс істейді</a>
-      <a href="#integrations">Интеграциялар</a>
-      <a href="#pricing">Тарифтер</a>
-      <a href="#faq">Сұрақтар</a>
-      <a href="https://apipay.kz/login">Кабинет</a>
-      <a class="btn btn--primary btn--block" href="#start">Тегін кеңес алу</a>
+      <div class="lang lang--mobile" role="group" aria-label="Тіл / Язык">
+        <button class="lang__btn is-active" data-lang="kk" type="button">Қазақша</button>
+        <button class="lang__btn" data-lang="ru" type="button">Русский</button>
+      </div>
+      <a href="#features"     data-i18n="nav.features">Мүмкіндіктер</a>
+      <a href="#how"          data-i18n="nav.how">Қалай жұмыс істейді</a>
+      <a href="#integrations" data-i18n="nav.integrations">Интеграциялар</a>
+      <a href="#pricing"      data-i18n="nav.pricing">Тарифтер</a>
+      <a href="#faq"          data-i18n="nav.faq">Сұрақтар</a>
+      <a href="https://apipay.kz/login" data-i18n="nav.cabinet">Кабинет</a>
+      <a class="btn btn--primary btn--block" href="#start" data-i18n="nav.cta">Тегін кеңес алу</a>
     </div>
   </div>
 </header>
@@ -93,27 +103,27 @@
   <div class="container hero__grid">
     <div>
       <span class="badge-pill">
-        <span class="tag">Жаңа</span>
-        <b>Kaspi Pay</b> үшін REST API
+        <span class="tag" data-i18n="hero.badgeTag">Жаңа</span>
+        <span data-i18n="hero.badge"><b>Kaspi Pay</b> үшін REST API</span>
       </span>
 
-      <h1>Kaspi Pay төлемдерін <span class="accent">толық автоматтандырыңыз</span></h1>
+      <h1 data-i18n="hero.title">Kaspi Pay төлемдерін <span class="accent">толық автоматтандырыңыз</span></h1>
 
-      <p class="hero__lead">
+      <p class="hero__lead" data-i18n="hero.lead">
         Телефон нөмірі бойынша шотты API арқылы қойыңыз, төлем туралы хабарламаны вебхукпен
         сол сәтте алыңыз, фискалдық чекті автоматты жіберіңіз. Ақша ешқайда «тоқтамай»,
         тікелей сіздің Kaspi Pay аккаунтыңызға түседі.
       </p>
 
       <div class="hero__cta">
-        <a class="btn btn--primary btn--lg" href="#start">Бір күнде қосылу →</a>
-        <a class="btn btn--ghost btn--lg" href="#code">API мысалдарын көру</a>
+        <a class="btn btn--primary btn--lg" href="#start" data-i18n="hero.cta1">Бір күнде қосылу →</a>
+        <a class="btn btn--ghost btn--lg" href="#code" data-i18n="hero.cta2">API мысалдарын көру</a>
       </div>
 
       <ul class="hero__usp">
-        <li><span class="check">✓</span> Сатудан 0% комиссия</li>
-        <li><span class="check">✓</span> Тіркелген айлық төлем</li>
-        <li><span class="check">✓</span> Сайт, CRM, 1С, Telegram-бот</li>
+        <li><span class="check">✓</span> <span data-i18n="hero.usp1">Сатудан 0% комиссия</span></li>
+        <li><span class="check">✓</span> <span data-i18n="hero.usp2">Тіркелген айлық төлем</span></li>
+        <li><span class="check">✓</span> <span data-i18n="hero.usp3">Сайт, CRM, 1С, Telegram-бот</span></li>
       </ul>
     </div>
 
@@ -125,32 +135,32 @@
           <span class="mock__dot" style="background:#28C840"></span>
           <span class="mock__title">POST /v1/invoices</span>
         </div>
-<pre><span class="c-com"># 1. Клиентке шот қоямыз</span>
+<pre><span class="c-com" data-i18n="hero.code1"># 1. Клиентке шот қоямыз</span>
 <span class="c-fn">curl</span> -X POST https://api.apipay.kz/v1/invoices \
   -H <span class="c-str">"Authorization: Bearer $APIPAY_KEY"</span> \
   -d <span class="c-str">'{
     <span class="c-key">"phone"</span>: <span class="c-str">"+77011234567"</span>,
     <span class="c-key">"amount"</span>: <span class="c-num">12500</span>,
-    <span class="c-key">"description"</span>: <span class="c-str">"Тапсырыс №1024"</span>
+    <span class="c-key">"description"</span>: <span class="c-str" data-i18n="code.order">"Тапсырыс №1024"</span>
   }'</span>
 
-<span class="c-com"># 2. Клиент Kaspi-де бір басумен төлейді</span>
-<span class="c-com"># 3. Сізге вебхук келеді → CRM жаңарады</span></pre>
+<span class="c-com" data-i18n="hero.code2"># 2. Клиент Kaspi-де бір басумен төлейді</span>
+<span class="c-com" data-i18n="hero.code3"># 3. Сізге вебхук келеді → CRM жаңарады</span></pre>
       </div>
 
       <div class="float-card float-card--pay">
         <span class="float-card__icon float-card__icon--green">💸</span>
         <span>
-          <span class="float-card__t">Төлем келді · 12 500 ₸</span>
-          <span class="float-card__s">Тапсырыс №1024 · 2 сек бұрын</span>
+          <span class="float-card__t" data-i18n="hero.payT">Төлем келді · 12 500 ₸</span>
+          <span class="float-card__s" data-i18n="hero.payS">Тапсырыс №1024 · 2 сек бұрын</span>
         </span>
       </div>
 
       <div class="float-card float-card--hook">
         <span class="float-card__icon float-card__icon--blue">🔔</span>
         <span>
-          <span class="float-card__t">webhook → сіздің сервер</span>
-          <span class="float-card__s">HMAC-SHA256 қолтаңбасымен</span>
+          <span class="float-card__t" data-i18n="hero.hookT">webhook → сіздің сервер</span>
+          <span class="float-card__s" data-i18n="hero.hookS">HMAC-SHA256 қолтаңбасымен</span>
         </span>
       </div>
     </div>
@@ -160,12 +170,12 @@
 <!-- ============================ TRUST STRIP ============================ -->
 <div class="strip">
   <div class="container strip__inner">
-    <span class="strip__label">Қолданылады:</span>
-    <span class="strip__item">🛒 Интернет-дүкендер</span>
-    <span class="strip__item">📚 Онлайн-курстар</span>
-    <span class="strip__item">🧾 1С бухгалтериясы</span>
-    <span class="strip__item">🤖 Telegram-боттар</span>
-    <span class="strip__item">📦 Көтерме сауда</span>
+    <span class="strip__label" data-i18n="strip.label">Қолданылады:</span>
+    <span class="strip__item" data-i18n="strip.i1">🛒 Интернет-дүкендер</span>
+    <span class="strip__item" data-i18n="strip.i2">📚 Онлайн-курстар</span>
+    <span class="strip__item" data-i18n="strip.i3">🧾 1С бухгалтериясы</span>
+    <span class="strip__item" data-i18n="strip.i4">🤖 Telegram-боттар</span>
+    <span class="strip__item" data-i18n="strip.i5">📦 Көтерме сауда</span>
   </div>
 </div>
 
@@ -173,9 +183,9 @@
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Таныс жағдай ма?</span>
-      <h2>Қолмен шот қою — сіздің ақшаңыз бен уақытыңыз</h2>
-      <p class="lead">Күніне 30 шот — бұл айына 25 сағат қолмен жұмыс. Және әрқайсысында қате жіберу қаупі.</p>
+      <span class="eyebrow" data-i18n="pain.eyebrow">Таныс жағдай ма?</span>
+      <h2 data-i18n="pain.title">Қолмен шот қою — сіздің ақшаңыз бен уақытыңыз</h2>
+      <p class="lead" data-i18n="pain.lead">Күніне 30 шот — бұл айына 25 сағат қолмен жұмыс. Және әрқайсысында қате жіберу қаупі.</p>
     </div>
 
     <div class="pains">
@@ -183,44 +193,44 @@
         <li class="pain">
           <span class="pain__x">✕</span>
           <span>
-            <b>Менеджер әр шотты телефоннан қояды</b>
-            <p>Kaspi Pay қосымшасын ашу, нөмірді теру, соманы енгізу — тапсырыс сайын 2–3 минут.</p>
+            <b data-i18n="pain.p1t">Менеджер әр шотты телефоннан қояды</b>
+            <p data-i18n="pain.p1d">Kaspi Pay қосымшасын ашу, нөмірді теру, соманы енгізу — тапсырыс сайын 2–3 минут.</p>
           </span>
         </li>
         <li class="pain">
           <span class="pain__x">✕</span>
           <span>
-            <b>Төлемді тексеру үшін телефонға қарау керек</b>
-            <p>Клиент «төледім» дейді, ал растау жоқ. Тапсырыс жөнелту кешігеді, клиент күтеді.</p>
+            <b data-i18n="pain.p2t">Төлемді тексеру үшін телефонға қарау керек</b>
+            <p data-i18n="pain.p2d">Клиент «төледім» дейді, ал растау жоқ. Тапсырыс жөнелту кешігеді, клиент күтеді.</p>
           </span>
         </li>
         <li class="pain">
           <span class="pain__x">✕</span>
           <span>
-            <b>CRM мен сайт төлем туралы білмейді</b>
-            <p>Мәртебені қолмен ауыстырасыз, кестелер сәйкеспейді, есеп айырысуда шатасу.</p>
+            <b data-i18n="pain.p3t">CRM мен сайт төлем туралы білмейді</b>
+            <p data-i18n="pain.p3d">Мәртебені қолмен ауыстырасыз, кестелер сәйкеспейді, есеп айырысуда шатасу.</p>
           </span>
         </li>
         <li class="pain">
           <span class="pain__x">✕</span>
           <span>
-            <b>Фискалдық чек жіберу ұмыт қалады</b>
-            <p>Ал бұл — тәртіп бұзу және клиенттің сенімін жоғалту.</p>
+            <b data-i18n="pain.p4t">Фискалдық чек жіберу ұмыт қалады</b>
+            <p data-i18n="pain.p4d">Ал бұл — тәртіп бұзу және клиенттің сенімін жоғалту.</p>
           </span>
         </li>
       </ul>
 
       <div class="solution reveal">
-        <h3>ApiPay-мен қалай болады</h3>
-        <p>Бір рет қосып, бүкіл ағынды жүйеге тапсырасыз:</p>
+        <h3 data-i18n="pain.solTitle">ApiPay-мен қалай болады</h3>
+        <p data-i18n="pain.solLead">Бір рет қосып, бүкіл ағынды жүйеге тапсырасыз:</p>
         <ul>
-          <li><span class="check">✓</span><span><b>Шот</b> — сайт, CRM немесе 1С бір <code>POST</code> сұранысымен автоматты қояды.</span></li>
-          <li><span class="check">✓</span><span><b>Төлем</b> — клиент Kaspi қосымшасынан бір басумен төлейді.</span></li>
-          <li><span class="check">✓</span><span><b>Растау</b> — вебхук лезде келеді, тапсырыс мәртебесі өзі ауысады.</span></li>
-          <li><span class="check">✓</span><span><b>Чек</b> — Kaspi OFD арқылы автоматты жіберіледі.</span></li>
-          <li><span class="check">✓</span><span><b>Ақша</b> — тікелей сіздің Kaspi Pay аккаунтыңызда.</span></li>
+          <li><span class="check">✓</span><span data-i18n="pain.sol1"><b>Шот</b> — сайт, CRM немесе 1С бір <code>POST</code> сұранысымен автоматты қояды.</span></li>
+          <li><span class="check">✓</span><span data-i18n="pain.sol2"><b>Төлем</b> — клиент Kaspi қосымшасынан бір басумен төлейді.</span></li>
+          <li><span class="check">✓</span><span data-i18n="pain.sol3"><b>Растау</b> — вебхук лезде келеді, тапсырыс мәртебесі өзі ауысады.</span></li>
+          <li><span class="check">✓</span><span data-i18n="pain.sol4"><b>Чек</b> — Kaspi OFD арқылы автоматты жіберіледі.</span></li>
+          <li><span class="check">✓</span><span data-i18n="pain.sol5"><b>Ақша</b> — тікелей сіздің Kaspi Pay аккаунтыңызда.</span></li>
         </ul>
-        <p class="solution__foot">Менеджер тапсырыспен емес, сатумен айналысады. Түнгі 2-де келген тапсырыс та автоматты өңделеді.</p>
+        <p class="solution__foot" data-i18n="pain.solFoot">Менеджер тапсырыспен емес, сатумен айналысады. Түнгі 2-де келген тапсырыс та автоматты өңделеді.</p>
       </div>
     </div>
   </div>
@@ -231,10 +241,10 @@
 <section class="section section--soft section--tight">
   <div class="container">
     <div class="stats">
-      <div class="stat reveal"><div class="stat__v"><span>0%</span></div><div class="stat__l">Сатудан алынатын комиссия</div></div>
-      <div class="stat reveal"><div class="stat__v">24/7</div><div class="stat__l">Автоматты шот қою және растау</div></div>
-      <div class="stat reveal"><div class="stat__v">1 күн</div><div class="stat__l">Орташа қосылу мерзімі</div></div>
-      <div class="stat reveal"><div class="stat__v">4</div><div class="stat__l">Бизнес көлеміне сай тариф</div></div>
+      <div class="stat reveal"><div class="stat__v"><span>0%</span></div><div class="stat__l" data-i18n="stats.l1">Сатудан алынатын комиссия</div></div>
+      <div class="stat reveal"><div class="stat__v">24/7</div><div class="stat__l" data-i18n="stats.l2">Автоматты шот қою және растау</div></div>
+      <div class="stat reveal"><div class="stat__v" data-i18n="stats.v3">1 күн</div><div class="stat__l" data-i18n="stats.l3">Орташа қосылу мерзімі</div></div>
+      <div class="stat reveal"><div class="stat__v">4</div><div class="stat__l" data-i18n="stats.l4">Бизнес көлеміне сай тариф</div></div>
     </div>
   </div>
 </section>
@@ -243,51 +253,51 @@
 <section class="section" id="features">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Мүмкіндіктер</span>
-      <h2>Төлем ағынына керектің бәрі — бір API-да</h2>
-      <p class="lead">Барлық функция барлық тарифте қолжетімді. Шектеу тек күніне қойылатын шот санында.</p>
+      <span class="eyebrow" data-i18n="feat.eyebrow">Мүмкіндіктер</span>
+      <h2 data-i18n="feat.title">Төлем ағынына керектің бәрі — бір API-да</h2>
+      <p class="lead" data-i18n="feat.lead">Барлық функция барлық тарифте қолжетімді. Шектеу тек күніне қойылатын шот санында.</p>
     </div>
 
     <div class="grid-3">
       <article class="card reveal">
         <div class="card__icon">📲</div>
-        <h3>Нөмір бойынша шот</h3>
-        <p>Клиенттің телефон нөмірін жібересіз — Kaspi қосымшасына төлем сұранысы келеді. Ол бір басумен төлейді.</p>
+        <h3 data-i18n="feat.f1t">Нөмір бойынша шот</h3>
+        <p data-i18n="feat.f1d">Клиенттің телефон нөмірін жібересіз — Kaspi қосымшасына төлем сұранысы келеді. Ол бір басумен төлейді.</p>
         <span class="card__tag">POST /v1/invoices</span>
       </article>
 
       <article class="card reveal">
         <div class="card__icon card__icon--blue">🔗</div>
-        <h3>Сілтеме және QR</h3>
-        <p>Instagram-да, чатта, оффлайн дүкенде — төлем сілтемесін немесе QR-кодты жіберіп, төлемді қабылдаңыз.</p>
+        <h3 data-i18n="feat.f2t">Сілтеме және QR</h3>
+        <p data-i18n="feat.f2d">Instagram-да, чатта, оффлайн дүкенде — төлем сілтемесін немесе QR-кодты жіберіп, төлемді қабылдаңыз.</p>
         <span class="card__tag">link · QR</span>
       </article>
 
       <article class="card reveal">
         <div class="card__icon card__icon--green">🔔</div>
-        <h3>Лезде вебхук</h3>
-        <p>Әр төлем туралы сіздің серверге хабарлама келеді. HMAC-SHA256 қолтаңбасы — жалған сұраныстан қорғайды.</p>
+        <h3 data-i18n="feat.f3t">Лезде вебхук</h3>
+        <p data-i18n="feat.f3d">Әр төлем туралы сіздің серверге хабарлама келеді. HMAC-SHA256 қолтаңбасы — жалған сұраныстан қорғайды.</p>
         <span class="card__tag">HMAC-SHA256</span>
       </article>
 
       <article class="card reveal">
         <div class="card__icon card__icon--soft">🧾</div>
-        <h3>Фискалдық чек</h3>
-        <p>Kaspi OFD арқылы чек автоматты түрде қалыптасып, клиентке жіберіледі. Қолмен ешнәрсе істемейсіз.</p>
+        <h3 data-i18n="feat.f4t">Фискалдық чек</h3>
+        <p data-i18n="feat.f4d">Kaspi OFD арқылы чек автоматты түрде қалыптасып, клиентке жіберіледі. Қолмен ешнәрсе істемейсіз.</p>
         <span class="card__tag">Kaspi OFD</span>
       </article>
 
       <article class="card reveal">
         <div class="card__icon">↩️</div>
-        <h3>Қайтару (refund)</h3>
-        <p>Толық немесе ішінара қайтаруды API арқылы жасайсыз — қолданушы қолмен растауын күтпейсіз.</p>
+        <h3 data-i18n="feat.f5t">Қайтару (refund)</h3>
+        <p data-i18n="feat.f5d">Толық немесе ішінара қайтаруды API арқылы жасайсыз — қолданушы қолмен растауын күтпейсіз.</p>
         <span class="card__tag">POST /refunds</span>
       </article>
 
       <article class="card reveal">
         <div class="card__icon card__icon--blue">🔁</div>
-        <h3>Қайталанатын төлемдер</h3>
-        <p>Жазылым, абонемент, ай сайынғы қызмет — кесте бойынша шот автоматты қойылады.</p>
+        <h3 data-i18n="feat.f6t">Қайталанатын төлемдер</h3>
+        <p data-i18n="feat.f6d">Жазылым, абонемент, ай сайынғы қызмет — кесте бойынша шот автоматты қойылады.</p>
         <span class="card__tag">recurring</span>
       </article>
     </div>
@@ -298,31 +308,31 @@
 <section class="section section--soft" id="how">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow eyebrow--blue">Қалай жұмыс істейді</span>
-      <h2>Қосылу — 4 қадам, бір жұмыс күні</h2>
-      <p class="lead">Kaspi Pay-ыңыз ашық болса, алғашқы шотты сол күні API арқылы қоясыз.</p>
+      <span class="eyebrow eyebrow--blue" data-i18n="how.eyebrow">Қалай жұмыс істейді</span>
+      <h2 data-i18n="how.title">Қосылу — 4 қадам, бір жұмыс күні</h2>
+      <p class="lead" data-i18n="how.lead">Kaspi Pay-ыңыз ашық болса, алғашқы шотты сол күні API арқылы қоясыз.</p>
     </div>
 
     <div class="steps">
       <div class="step reveal">
         <div class="step__n">1</div>
-        <h3>Kaspi Pay</h3>
-        <p>Бизнесіңізде Kaspi Pay ашық болуы керек. Ашық болса — бұл қадам дайын.</p>
+        <h3 data-i18n="how.s1t">Kaspi Pay</h3>
+        <p data-i18n="how.s1d">Бизнесіңізде Kaspi Pay ашық болуы керек. Ашық болса — бұл қадам дайын.</p>
       </div>
       <div class="step reveal">
         <div class="step__n">2</div>
-        <h3>API кілті</h3>
-        <p>ApiPay кабинетінде тіркеліп, жеке API кілтіңізді аласыз.</p>
+        <h3 data-i18n="how.s2t">API кілті</h3>
+        <p data-i18n="how.s2d">ApiPay кабинетінде тіркеліп, жеке API кілтіңізді аласыз.</p>
       </div>
       <div class="step reveal">
         <div class="step__n">3</div>
-        <h3>Вебхук URL</h3>
-        <p>Кабинетте төлем хабарламасы келетін мекенжайды көрсетесіз.</p>
+        <h3 data-i18n="how.s3t">Вебхук URL</h3>
+        <p data-i18n="how.s3d">Кабинетте төлем хабарламасы келетін мекенжайды көрсетесіз.</p>
       </div>
       <div class="step reveal">
         <div class="step__n">4</div>
-        <h3>Алғашқы шот</h3>
-        <p>Бір <code>POST</code> сұранысы — және жүйе жұмыс істей бастайды.</p>
+        <h3 data-i18n="how.s4t">Алғашқы шот</h3>
+        <p data-i18n="how.s4d">Бір <code>POST</code> сұранысы — және жүйе жұмыс істей бастайды.</p>
       </div>
     </div>
   </div>
@@ -332,18 +342,18 @@
 <section class="section" id="code">
   <div class="container code-block">
     <div>
-      <span class="eyebrow">Әзірлеушілерге</span>
-      <h2>Құжаттама түсінікті, интеграция — бірнеше сағат</h2>
-      <p class="lead">OpenAPI 3.0 спецификациясы, JavaScript, Python, PHP және cURL мысалдары дайын. Бағдарламашыңыз ертең-ақ қосып береді.</p>
+      <span class="eyebrow" data-i18n="dev.eyebrow">Әзірлеушілерге</span>
+      <h2 data-i18n="dev.title">Құжаттама түсінікті, интеграция — бірнеше сағат</h2>
+      <p class="lead" data-i18n="dev.lead">OpenAPI 3.0 спецификациясы, JavaScript, Python, PHP және cURL мысалдары дайын. Бағдарламашыңыз ертең-ақ қосып береді.</p>
 
-      <div class="feat-line reveal"><span class="check">✓</span><p><b>Тұрақты REST</b> — болжамды JSON жауаптары мен қате кодтары.</p></div>
-      <div class="feat-line reveal"><span class="check">✓</span><p><b>Идемпотенттік</b> — <code>external_id</code> арқылы қосарланған шоттан қорғану.</p></div>
-      <div class="feat-line reveal"><span class="check">✓</span><p><b>Қолтаңбалы вебхуктар</b> — әр хабарлама HMAC-SHA256-пен расталады.</p></div>
+      <div class="feat-line reveal"><span class="check">✓</span><p data-i18n="dev.l1"><b>Тұрақты REST</b> — болжамды JSON жауаптары мен қате кодтары.</p></div>
+      <div class="feat-line reveal"><span class="check">✓</span><p data-i18n="dev.l2"><b>Идемпотенттік</b> — <code>external_id</code> арқылы қосарланған шоттан қорғану.</p></div>
+      <div class="feat-line reveal"><span class="check">✓</span><p data-i18n="dev.l3"><b>Қолтаңбалы вебхуктар</b> — әр хабарлама HMAC-SHA256-пен расталады.</p></div>
 
       <!-- АУЫСТЫРЫҢЫЗ: құжаттама сілтемелері -->
       <div class="hero__cta">
-        <a class="btn btn--ghost" href="https://apipay.kz/kaspi-api">Құжаттама →</a>
-        <a class="btn btn--soft" href="https://github.com/bazarbaykz/apipay-docs">GitHub мысалдары</a>
+        <a class="btn btn--ghost" href="https://apipay.kz/kaspi-api" data-i18n="dev.btn1">Құжаттама →</a>
+        <a class="btn btn--soft" href="https://github.com/bazarbaykz/apipay-docs" data-i18n="dev.btn2">GitHub мысалдары</a>
       </div>
     </div>
 
@@ -355,7 +365,7 @@
           <button class="tab" data-tab="python" role="tab">Python</button>
           <button class="tab" data-tab="php"    role="tab">PHP</button>
         </div>
-        <button class="copy-btn" id="copyBtn">Көшіру</button>
+        <button class="copy-btn" id="copyBtn" data-i18n="dev.copy">Көшіру</button>
 
         <div class="code-panel is-active" data-panel="curl">
 <pre>curl -X POST https://api.apipay.kz/v1/invoices \
@@ -365,7 +375,7 @@
     <span class="c-key">"phone"</span>: <span class="c-str">"+77011234567"</span>,
     <span class="c-key">"amount"</span>: <span class="c-num">12500</span>,
     <span class="c-key">"currency"</span>: <span class="c-str">"KZT"</span>,
-    <span class="c-key">"description"</span>: <span class="c-str">"Тапсырыс №1024"</span>,
+    <span class="c-key">"description"</span>: <span class="c-str" data-i18n="code.order">"Тапсырыс №1024"</span>,
     <span class="c-key">"external_id"</span>: <span class="c-str">"order-1024"</span>
   }'</span></pre>
         </div>
@@ -380,7 +390,7 @@
   body: <span class="c-fn">JSON.stringify</span>({
     phone: <span class="c-str">"+77011234567"</span>,
     amount: <span class="c-num">12500</span>,
-    description: <span class="c-str">"Тапсырыс №1024"</span>,
+    description: <span class="c-str" data-i18n="code.order">"Тапсырыс №1024"</span>,
     external_id: <span class="c-str">"order-1024"</span>
   })
 });
@@ -398,7 +408,7 @@ r = requests.<span class="c-fn">post</span>(
     json={
         <span class="c-str">"phone"</span>: <span class="c-str">"+77011234567"</span>,
         <span class="c-str">"amount"</span>: <span class="c-num">12500</span>,
-        <span class="c-str">"description"</span>: <span class="c-str">"Тапсырыс №1024"</span>,
+        <span class="c-str">"description"</span>: <span class="c-str" data-i18n="code.order">"Тапсырыс №1024"</span>,
         <span class="c-str">"external_id"</span>: <span class="c-str">"order-1024"</span>,
     },
     timeout=<span class="c-num">15</span>,
@@ -421,14 +431,14 @@ invoice = r.<span class="c-fn">json</span>()
   CURLOPT_POSTFIELDS     =&gt; <span class="c-fn">json_encode</span>([
     <span class="c-str">"phone"</span>       =&gt; <span class="c-str">"+77011234567"</span>,
     <span class="c-str">"amount"</span>      =&gt; <span class="c-num">12500</span>,
-    <span class="c-str">"description"</span> =&gt; <span class="c-str">"Тапсырыс №1024"</span>,
+    <span class="c-str">"description"</span> =&gt; <span class="c-str" data-i18n="code.order">"Тапсырыс №1024"</span>,
   ]),
 ]);
 
 <span class="c-key">$invoice</span> = <span class="c-fn">json_decode</span>(<span class="c-fn">curl_exec</span>(<span class="c-key">$ch</span>), <span class="c-key">true</span>);</pre>
         </div>
       </div>
-      <p class="tiny" style="margin-top:12px">Мысал үшін келтірілген сұраныс. Өрістердің толық тізімі — ресми құжаттамада.</p>
+      <p class="tiny" style="margin-top:12px" data-i18n="dev.note">Мысал үшін келтірілген сұраныс. Өрістердің толық тізімі — ресми құжаттамада.</p>
     </div>
   </div>
 </section>
@@ -437,18 +447,18 @@ invoice = r.<span class="c-fn">json</span>()
 <section class="section section--soft" id="integrations">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Интеграциялар</span>
-      <h2>Қазірдің өзінде қолданып жүрген жүйеңізге қосылады</h2>
-      <p class="lead">Ештеңені ауыстырудың қажеті жоқ — ApiPay бар процесіңіздің үстіне орнатылады.</p>
+      <span class="eyebrow" data-i18n="int.eyebrow">Интеграциялар</span>
+      <h2 data-i18n="int.title">Қазірдің өзінде қолданып жүрген жүйеңізге қосылады</h2>
+      <p class="lead" data-i18n="int.lead">Ештеңені ауыстырудың қажеті жоқ — ApiPay бар процесіңіздің үстіне орнатылады.</p>
     </div>
 
     <div class="integrations">
-      <div class="integration reveal"><span class="integration__logo">🌐</span><span><b>Сайт / интернет-дүкен</b><span>Себеттен шығуда автоматты шот</span></span></div>
-      <div class="integration reveal"><span class="integration__logo">1С</span><span><b>1С бухгалтерия</b><span>Құжаттан шот, төлем автоматты жабылады</span></span></div>
-      <div class="integration reveal"><span class="integration__logo">📊</span><span><b>CRM жүйелері</b><span>Bitrix24, amoCRM және басқалары</span></span></div>
-      <div class="integration reveal"><span class="integration__logo">🤖</span><span><b>Telegram-бот</b><span>Чат ішінде тапсырыс және төлем</span></span></div>
-      <div class="integration reveal"><span class="integration__logo">⚙️</span><span><b>n8n / автоматтандыру</b><span>Код жазбай сценарий құрыңыз</span></span></div>
-      <div class="integration reveal"><span class="integration__logo">📱</span><span><b>Мобильді қосымша</b><span>iOS және Android — сол бір API</span></span></div>
+      <div class="integration reveal"><span class="integration__logo">🌐</span><span><b data-i18n="int.i1t">Сайт / интернет-дүкен</b><span data-i18n="int.i1d">Себеттен шығуда автоматты шот</span></span></div>
+      <div class="integration reveal"><span class="integration__logo">1С</span><span><b data-i18n="int.i2t">1С бухгалтерия</b><span data-i18n="int.i2d">Құжаттан шот, төлем автоматты жабылады</span></span></div>
+      <div class="integration reveal"><span class="integration__logo">📊</span><span><b data-i18n="int.i3t">CRM жүйелері</b><span data-i18n="int.i3d">Bitrix24, amoCRM және басқалары</span></span></div>
+      <div class="integration reveal"><span class="integration__logo">🤖</span><span><b data-i18n="int.i4t">Telegram-бот</b><span data-i18n="int.i4d">Чат ішінде тапсырыс және төлем</span></span></div>
+      <div class="integration reveal"><span class="integration__logo">⚙️</span><span><b data-i18n="int.i5t">n8n / автоматтандыру</b><span data-i18n="int.i5d">Код жазбай сценарий құрыңыз</span></span></div>
+      <div class="integration reveal"><span class="integration__logo">📱</span><span><b data-i18n="int.i6t">Мобильді қосымша</b><span data-i18n="int.i6d">iOS және Android — сол бір API</span></span></div>
     </div>
   </div>
 </section>
@@ -457,17 +467,17 @@ invoice = r.<span class="c-fn">json</span>()
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Кімге пайдалы</span>
-      <h2>Күніне 10 шоттан бастап — автоматтандыру өзін ақтайды</h2>
+      <span class="eyebrow" data-i18n="case.eyebrow">Кімге пайдалы</span>
+      <h2 data-i18n="case.title">Күніне 10 шоттан бастап — автоматтандыру өзін ақтайды</h2>
     </div>
 
     <div class="cases">
-      <div class="case reveal"><span class="case__emoji">🛍️</span><b>Интернет-дүкендер</b><p>Тапсырыс расталған сәтте шот қойылады, төлем келгенде қойма мен жеткізу автоматты іске қосылады.</p></div>
-      <div class="case reveal"><span class="case__emoji">🎓</span><b>Курстар мен мектептер</b><p>Ай сайынғы оқу төлемі — қайталанатын шоттар. Төлемегендерге еске салу автоматты.</p></div>
-      <div class="case reveal"><span class="case__emoji">🔧</span><b>Қызмет көрсету</b><p>Шебер жұмысты бітірген соң қосымшадан шот қояды — клиент сол жерде төлейді.</p></div>
-      <div class="case reveal"><span class="case__emoji">📦</span><b>Көтерме сауда</b><p>Жүздеген шот — қолмен емес, 1С-тен тікелей. Есеп айырысу нақты уақытта көрінеді.</p></div>
-      <div class="case reveal"><span class="case__emoji">🔁</span><b>Жазылым сервистері</b><p>Абонемент, SaaS, спортзал — төлем кестесі бойынша автоматты жаңарады.</p></div>
-      <div class="case reveal"><span class="case__emoji">📣</span><b>Instagram-сауда</b><p>Директтегі сұранысқа сілтеме немесе QR жібересіз — төлем бірден расталады.</p></div>
+      <div class="case reveal"><span class="case__emoji">🛍️</span><b data-i18n="case.c1t">Интернет-дүкендер</b><p data-i18n="case.c1d">Тапсырыс расталған сәтте шот қойылады, төлем келгенде қойма мен жеткізу автоматты іске қосылады.</p></div>
+      <div class="case reveal"><span class="case__emoji">🎓</span><b data-i18n="case.c2t">Курстар мен мектептер</b><p data-i18n="case.c2d">Ай сайынғы оқу төлемі — қайталанатын шоттар. Төлемегендерге еске салу автоматты.</p></div>
+      <div class="case reveal"><span class="case__emoji">🔧</span><b data-i18n="case.c3t">Қызмет көрсету</b><p data-i18n="case.c3d">Шебер жұмысты бітірген соң қосымшадан шот қояды — клиент сол жерде төлейді.</p></div>
+      <div class="case reveal"><span class="case__emoji">📦</span><b data-i18n="case.c4t">Көтерме сауда</b><p data-i18n="case.c4d">Жүздеген шот — қолмен емес, 1С-тен тікелей. Есеп айырысу нақты уақытта көрінеді.</p></div>
+      <div class="case reveal"><span class="case__emoji">🔁</span><b data-i18n="case.c5t">Жазылым сервистері</b><p data-i18n="case.c5d">Абонемент, SaaS, спортзал — төлем кестесі бойынша автоматты жаңарады.</p></div>
+      <div class="case reveal"><span class="case__emoji">📣</span><b data-i18n="case.c6t">Instagram-сауда</b><p data-i18n="case.c6d">Директтегі сұранысқа сілтеме немесе QR жібересіз — төлем бірден расталады.</p></div>
     </div>
   </div>
 </section>
@@ -476,50 +486,50 @@ invoice = r.<span class="c-fn">json</span>()
 <section class="section section--soft">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Есептеу</span>
-      <h2>ApiPay сізге қанша үнемдейді?</h2>
-      <p class="lead">Жүгірткіні жылжытып көріңіз — уақыт пен комиссия бойынша айлық үнемді көресіз.</p>
+      <span class="eyebrow" data-i18n="calc.eyebrow">Есептеу</span>
+      <h2 data-i18n="calc.title">ApiPay сізге қанша үнемдейді?</h2>
+      <p class="lead" data-i18n="calc.lead">Жүгірткіні жылжытып көріңіз — уақыт пен комиссия бойынша айлық үнемді көресіз.</p>
     </div>
 
     <div class="calc reveal">
       <div class="calc__form">
         <div class="calc__field">
           <label class="calc__label" for="cnt">
-            <span>Күніне қойылатын шот саны</span>
+            <span data-i18n="calc.f1">Күніне қойылатын шот саны</span>
             <output id="cntOut">30</output>
           </label>
           <input type="range" id="cnt" min="5" max="600" step="5" value="30">
         </div>
 
         <div class="calc__field">
-          <label class="calc__label" for="avg"><span>Орташа чек, ₸</span></label>
+          <label class="calc__label" for="avg"><span data-i18n="calc.f2">Орташа чек, ₸</span></label>
           <input class="calc__input" type="number" id="avg" value="12500" min="100" step="500" inputmode="numeric">
         </div>
 
         <div class="calc__field">
-          <label class="calc__label" for="min"><span>Бір шотқа кететін уақыт, мин</span></label>
+          <label class="calc__label" for="min"><span data-i18n="calc.f3">Бір шотқа кететін уақыт, мин</span></label>
           <input class="calc__input" type="number" id="min" value="2" min="1" max="15" step="1" inputmode="numeric">
         </div>
 
-        <p class="tiny">Салыстыру үшін интернет-эквайрингтің шартты мөлшерлемесі — <b id="rateLabel">2,5%</b>. ApiPay айналымнан пайыз алмайды.</p>
+        <p class="tiny" data-i18n="calc.note">Салыстыру үшін интернет-эквайрингтің шартты мөлшерлемесі — <b>2,5%</b>. ApiPay айналымнан пайыз алмайды.</p>
       </div>
 
       <div class="calc__result">
-        <div class="calc__row"><span>Айлық айналым</span><b id="turnover">—</b></div>
-        <div class="calc__row"><span>Эквайринг комиссиясы (2,5%)</span><b id="fee">—</b></div>
-        <div class="calc__row"><span>ApiPay жазылымы</span><b id="planPrice">—</b></div>
-        <div class="calc__row"><span>Қолмен жұмысқа кететін уақыт</span><b id="hours">—</b></div>
+        <div class="calc__row"><span data-i18n="calc.r1">Айлық айналым</span><b id="turnover">—</b></div>
+        <div class="calc__row"><span data-i18n="calc.r2">Эквайринг комиссиясы (2,5%)</span><b id="fee">—</b></div>
+        <div class="calc__row"><span data-i18n="calc.r3">ApiPay жазылымы</span><b id="planPrice">—</b></div>
+        <div class="calc__row"><span data-i18n="calc.r4">Қолмен жұмысқа кететін уақыт</span><b id="hours">—</b></div>
 
         <div class="calc__row calc__big">
-          <span>Айлық үнем</span><b id="save">—</b>
+          <span data-i18n="calc.big">Айлық үнем</span><b id="save">—</b>
         </div>
 
         <div class="calc__plan">
-          <span>Ұсынылатын тариф</span>
+          <span data-i18n="calc.planLabel">Ұсынылатын тариф</span>
           <b id="planName">—</b>
         </div>
 
-        <a class="btn btn--primary btn--block" href="#start">Осы тарифпен қосылу</a>
+        <a class="btn btn--primary btn--block" href="#start" data-i18n="calc.cta">Осы тарифпен қосылу</a>
       </div>
     </div>
   </div>
@@ -529,66 +539,66 @@ invoice = r.<span class="c-fn">json</span>()
 <section class="section" id="pricing">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Тарифтер</span>
-      <h2>Тіркелген айлық төлем. Сатудан пайыз жоқ</h2>
-      <p class="lead">Айналымыңыз өссе де, жазылым бағасы өзгермейді. Барлық функция әр тарифте ашық.</p>
+      <span class="eyebrow" data-i18n="price.eyebrow">Тарифтер</span>
+      <h2 data-i18n="price.title">Тіркелген айлық төлем. Сатудан пайыз жоқ</h2>
+      <p class="lead" data-i18n="price.lead">Айналымыңыз өссе де, жазылым бағасы өзгермейді. Барлық функция әр тарифте ашық.</p>
     </div>
 
     <div class="plans">
       <div class="plan reveal">
         <div class="plan__name">Start</div>
-        <div class="plan__price">10 000 ₸ <small>/ ай</small></div>
-        <div class="plan__limit">Күніне 30 шотқа дейін</div>
+        <div class="plan__price">10 000 ₸ <small data-i18n="price.per">/ ай</small></div>
+        <div class="plan__limit" data-i18n="price.lim1">Күніне 30 шотқа дейін</div>
         <ul>
-          <li><span class="check">✓</span> Нөмір бойынша шот, сілтеме, QR</li>
-          <li><span class="check">✓</span> Вебхуктар және фискалдық чек</li>
-          <li><span class="check">✓</span> Қайтару және қайталанатын төлем</li>
-          <li><span class="check">✓</span> Құжаттама мен код мысалдары</li>
+          <li><span class="check">✓</span> <span data-i18n="price.p1f1">Нөмір бойынша шот, сілтеме, QR</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p1f2">Вебхуктар және фискалдық чек</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p1f3">Қайтару және қайталанатын төлем</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p1f4">Құжаттама мен код мысалдары</span></li>
         </ul>
-        <a class="btn btn--ghost btn--block" href="#start">Таңдау</a>
+        <a class="btn btn--ghost btn--block" href="#start" data-i18n="price.choose">Таңдау</a>
       </div>
 
-      <div class="plan plan--featured reveal" data-badge="ЕҢ ТАНЫМАЛ">
+      <div class="plan plan--featured reveal" data-badge="ЕҢ ТАНЫМАЛ" data-i18n-attr="data-badge" data-i18n="price.popular">
         <div class="plan__name">Business</div>
-        <div class="plan__price">25 000 ₸ <small>/ ай</small></div>
-        <div class="plan__limit">Күніне 100 шотқа дейін</div>
+        <div class="plan__price">25 000 ₸ <small data-i18n="price.per">/ ай</small></div>
+        <div class="plan__limit" data-i18n="price.lim2">Күніне 100 шотқа дейін</div>
         <ul>
-          <li><span class="check">✓</span> Start тарифіндегінің бәрі</li>
-          <li><span class="check">✓</span> Өсіп келе жатқан дүкенге лимит</li>
-          <li><span class="check">✓</span> CRM және 1С интеграциясы</li>
-          <li><span class="check">✓</span> Қосылуда қолдау</li>
+          <li><span class="check">✓</span> <span data-i18n="price.p2f1">Start тарифіндегінің бәрі</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p2f2">Өсіп келе жатқан дүкенге лимит</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p2f3">CRM және 1С интеграциясы</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p2f4">Қосылуда қолдау</span></li>
         </ul>
-        <a class="btn btn--primary btn--block" href="#start">Таңдау</a>
+        <a class="btn btn--primary btn--block" href="#start" data-i18n="price.choose">Таңдау</a>
       </div>
 
       <div class="plan reveal">
         <div class="plan__name">Pro</div>
-        <div class="plan__price">60 000 ₸ <small>/ ай</small></div>
-        <div class="plan__limit">Күніне 300 шотқа дейін</div>
+        <div class="plan__price">60 000 ₸ <small data-i18n="price.per">/ ай</small></div>
+        <div class="plan__limit" data-i18n="price.lim3">Күніне 300 шотқа дейін</div>
         <ul>
-          <li><span class="check">✓</span> Business тарифіндегінің бәрі</li>
-          <li><span class="check">✓</span> Жоғары жүктемеге лимит</li>
-          <li><span class="check">✓</span> Бірнеше нүкте / бөлім</li>
-          <li><span class="check">✓</span> Басым қолдау</li>
+          <li><span class="check">✓</span> <span data-i18n="price.p3f1">Business тарифіндегінің бәрі</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p3f2">Жоғары жүктемеге лимит</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p3f3">Бірнеше нүкте / бөлім</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p3f4">Басым қолдау</span></li>
         </ul>
-        <a class="btn btn--ghost btn--block" href="#start">Таңдау</a>
+        <a class="btn btn--ghost btn--block" href="#start" data-i18n="price.choose">Таңдау</a>
       </div>
 
       <div class="plan reveal">
         <div class="plan__name">Pro Max</div>
-        <div class="plan__price">90 000 ₸ <small>/ ай</small></div>
-        <div class="plan__limit">Күніне 600 шотқа дейін</div>
+        <div class="plan__price">90 000 ₸ <small data-i18n="price.per">/ ай</small></div>
+        <div class="plan__limit" data-i18n="price.lim4">Күніне 600 шотқа дейін</div>
         <ul>
-          <li><span class="check">✓</span> Pro тарифіндегінің бәрі</li>
-          <li><span class="check">✓</span> Ірі көлемдегі сауда үшін</li>
-          <li><span class="check">✓</span> Жеке шарттар бойынша кеңес</li>
-          <li><span class="check">✓</span> Техникалық сүйемелдеу</li>
+          <li><span class="check">✓</span> <span data-i18n="price.p4f1">Pro тарифіндегінің бәрі</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p4f2">Ірі көлемдегі сауда үшін</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p4f3">Жеке шарттар бойынша кеңес</span></li>
+          <li><span class="check">✓</span> <span data-i18n="price.p4f4">Техникалық сүйемелдеу</span></li>
         </ul>
-        <a class="btn btn--ghost btn--block" href="#start">Таңдау</a>
+        <a class="btn btn--ghost btn--block" href="#start" data-i18n="price.choose">Таңдау</a>
       </div>
     </div>
 
-    <p class="price-note">
+    <p class="price-note" data-i18n="price.note">
       Ақша <b>тікелей сіздің Kaspi Pay аккаунтыңызға</b> түседі — ApiPay қаражатты ұстамайды және сатудан пайыз алмайды.
       <br>Лимиттен көп шот керек пе? <a href="#start" style="color:var(--brand);font-weight:650">Бізге жазыңыз</a> — жеке шешім ұсынамыз.
     </p>
@@ -599,42 +609,42 @@ invoice = r.<span class="c-fn">json</span>()
 <section class="section section--soft" id="faq">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Жиі қойылатын сұрақтар</span>
-      <h2>Қосылар алдында білгіңіз келетіні</h2>
+      <span class="eyebrow" data-i18n="faq.eyebrow">Жиі қойылатын сұрақтар</span>
+      <h2 data-i18n="faq.title">Қосылар алдында білгіңіз келетіні</h2>
     </div>
 
     <div class="faq">
       <div class="qa">
-        <button class="qa__q">Ақша қайда түседі? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Тікелей сіздің Kaspi Pay аккаунтыңызға. ApiPay — банк емес және қаражатты өз шотында ұстамайды. Біз тек шот қою мен төлем туралы хабарламаны автоматтандырамыз.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q1">Ақша қайда түседі?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a1">Тікелей сіздің Kaspi Pay аккаунтыңызға. ApiPay — банк емес және қаражатты өз шотында ұстамайды. Біз тек шот қою мен төлем туралы хабарламаны автоматтандырамыз.</p></div>
       </div>
       <div class="qa">
-        <button class="qa__q">Сатудан комиссия аласыздар ма? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Жоқ. Сіз тек тіркелген айлық жазылым төлейсіз. Айналымыңыз 1 млн болса да, 50 млн болса да — тариф бағасы сол күйі қалады.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q2">Сатудан комиссия аласыздар ма?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a2">Жоқ. Сіз тек тіркелген айлық жазылым төлейсіз. Айналымыңыз 1 млн болса да, 50 млн болса да — тариф бағасы сол күйі қалады.</p></div>
       </div>
       <div class="qa">
-        <button class="qa__q">Қосылу қанша уақыт алады? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Kaspi Pay-ыңыз ашық болса, кабинетте тіркелу бірнеше минут алады, ал алғашқы шотты сол күні қоясыз. Сайтқа немесе CRM-ге толық интеграция әдетте бірнеше сағатқа созылады.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q3">Қосылу қанша уақыт алады?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a3">Kaspi Pay-ыңыз ашық болса, кабинетте тіркелу бірнеше минут алады, ал алғашқы шотты сол күні қоясыз. Сайтқа немесе CRM-ге толық интеграция әдетте бірнеше сағатқа созылады.</p></div>
       </div>
       <div class="qa">
-        <button class="qa__q">Бағдарламашы керек пе? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Сайтқа немесе CRM-ге интеграция үшін — иә, әзірлеуші қажет. Бірақ құжаттама, OpenAPI спецификациясы және JavaScript, Python, PHP мысалдары дайын, сондықтан жұмыс көлемі аз. n8n сияқты құралдармен кодсыз да сценарий құруға болады.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q4">Бағдарламашы керек пе?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a4">Сайтқа немесе CRM-ге интеграция үшін — иә, әзірлеуші қажет. Бірақ құжаттама, OpenAPI спецификациясы және JavaScript, Python, PHP мысалдары дайын, сондықтан жұмыс көлемі аз. n8n сияқты құралдармен кодсыз да сценарий құруға болады.</p></div>
       </div>
       <div class="qa">
-        <button class="qa__q">Фискалдық чек ше? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Чек Kaspi OFD арқылы автоматты қалыптасады және клиентке жіберіледі — менеджердің қатысуы қажет емес.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q5">Фискалдық чек ше?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a5">Чек Kaspi OFD арқылы автоматты қалыптасады және клиентке жіберіледі — менеджердің қатысуы қажет емес.</p></div>
       </div>
       <div class="qa">
-        <button class="qa__q">Бұл Kaspi-дің ресми сервисі ме? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Жоқ. ApiPay — сіздің өз Kaspi Pay-ыңыздың үстінде жұмыс істейтін тәуелсіз сервис, Kaspi Bank-тің ресми серіктесі емес. Барлық төлем сіздің Kaspi Pay аккаунтыңыз арқылы өтеді.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q6">Бұл Kaspi-дің ресми сервисі ме?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a6">Жоқ. ApiPay — сіздің өз Kaspi Pay-ыңыздың үстінде жұмыс істейтін тәуелсіз сервис, Kaspi Bank-тің ресми серіктесі емес. Барлық төлем сіздің Kaspi Pay аккаунтыңыз арқылы өтеді.</p></div>
       </div>
       <div class="qa">
-        <button class="qa__q">Лимиттен асып кетсем не болады? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Кез келген уақытта жоғарырақ тарифке ауыса аласыз. Күніне 600 шоттан көп керек болса — бізге жазыңыз, жеке шарт ұсынамыз.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q7">Лимиттен асып кетсем не болады?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a7">Кез келген уақытта жоғарырақ тарифке ауыса аласыз. Күніне 600 шоттан көп керек болса — бізге жазыңыз, жеке шарт ұсынамыз.</p></div>
       </div>
       <div class="qa">
-        <button class="qa__q">Деректер қаншалықты қауіпсіз? <span class="qa__icon">+</span></button>
-        <div class="qa__a"><p>Барлық сұраныс HTTPS арқылы жүреді, API кілтімен расталады. Вебхуктар HMAC-SHA256 қолтаңбасымен қол қойылады — сіздің сервер хабарламаның шынымен ApiPay-дан келгенін тексере алады.</p></div>
+        <button class="qa__q"><span data-i18n="faq.q8">Деректер қаншалықты қауіпсіз?</span> <span class="qa__icon">+</span></button>
+        <div class="qa__a"><p data-i18n="faq.a8">Барлық сұраныс HTTPS арқылы жүреді, API кілтімен расталады. Вебхуктар HMAC-SHA256 қолтаңбасымен қол қойылады — сіздің сервер хабарламаның шынымен ApiPay-дан келгенін тексере алады.</p></div>
       </div>
     </div>
   </div>
@@ -645,65 +655,65 @@ invoice = r.<span class="c-fn">json</span>()
   <div class="container">
     <div class="cta reveal">
       <div>
-        <span class="eyebrow">Бастайық</span>
-        <h2>Ертеңнен бастап шоттарды қолмен қоймайсыз</h2>
-        <p class="lead">Өтініш қалдырыңыз — бизнесіңізге қай тариф сай келетінін айтып, қосылу жоспарын ұсынамыз. Кеңес тегін.</p>
+        <span class="eyebrow" data-i18n="cta.eyebrow">Бастайық</span>
+        <h2 data-i18n="cta.title">Ертеңнен бастап шоттарды қолмен қоймайсыз</h2>
+        <p class="lead" data-i18n="cta.lead">Өтініш қалдырыңыз — бизнесіңізге қай тариф сай келетінін айтып, қосылу жоспарын ұсынамыз. Кеңес тегін.</p>
         <ul class="cta__usp">
-          <li><span class="check">✓</span> Сату көлеміне қарамастан 0% комиссия</li>
-          <li><span class="check">✓</span> Ақша тікелей Kaspi Pay аккаунтыңызда</li>
-          <li><span class="check">✓</span> Қосылуда техникалық қолдау</li>
+          <li><span class="check">✓</span> <span data-i18n="cta.u1">Сату көлеміне қарамастан 0% комиссия</span></li>
+          <li><span class="check">✓</span> <span data-i18n="cta.u2">Ақша тікелей Kaspi Pay аккаунтыңызда</span></li>
+          <li><span class="check">✓</span> <span data-i18n="cta.u3">Қосылуда техникалық қолдау</span></li>
         </ul>
       </div>
 
       <!-- ЕСКЕРТУ: форманы өз CRM/бэкендіңізге жалғаңыз (app.js → FORM_ENDPOINT) -->
       <form class="form" id="leadForm" novalidate>
         <div class="form__body">
-          <h3>Тегін кеңес алу</h3>
-          <p class="small muted">Жұмыс уақытында 15 минут ішінде хабарласамыз.</p>
+          <h3 data-i18n="form.title">Тегін кеңес алу</h3>
+          <p class="small muted" data-i18n="form.sub">Жұмыс уақытында 15 минут ішінде хабарласамыз.</p>
 
           <div class="field">
-            <label for="name">Атыңыз</label>
-            <input type="text" id="name" name="name" placeholder="Айбек" required>
-            <span class="err">Атыңызды жазыңыз</span>
+            <label for="name" data-i18n="form.name">Атыңыз</label>
+            <input type="text" id="name" name="name" placeholder="Айбек" data-i18n-attr="placeholder" data-i18n="form.namePh" required>
+            <span class="err" data-i18n="form.nameErr">Атыңызды жазыңыз</span>
           </div>
 
           <div class="field">
-            <label for="phone">WhatsApp немесе телефон</label>
+            <label for="phone" data-i18n="form.phone">WhatsApp немесе телефон</label>
             <input type="tel" id="phone" name="phone" placeholder="+7 (700) 000-00-00" required>
-            <span class="err">Дұрыс нөмір енгізіңіз</span>
+            <span class="err" data-i18n="form.phoneErr">Дұрыс нөмір енгізіңіз</span>
           </div>
 
           <div class="field">
-            <label for="biz">Бизнес түрі</label>
+            <label for="biz" data-i18n="form.biz">Бизнес түрі</label>
             <select id="biz" name="biz">
-              <option>Интернет-дүкен</option>
-              <option>Курстар / білім беру</option>
-              <option>Қызмет көрсету</option>
-              <option>Көтерме сауда</option>
-              <option>Жазылым сервисі</option>
-              <option>Басқа</option>
+              <option data-i18n="form.biz1">Интернет-дүкен</option>
+              <option data-i18n="form.biz2">Курстар / білім беру</option>
+              <option data-i18n="form.biz3">Қызмет көрсету</option>
+              <option data-i18n="form.biz4">Көтерме сауда</option>
+              <option data-i18n="form.biz5">Жазылым сервисі</option>
+              <option data-i18n="form.biz6">Басқа</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="vol">Күніне шамамен шот саны</label>
+            <label for="vol" data-i18n="form.vol">Күніне шамамен шот саны</label>
             <select id="vol" name="vol">
-              <option>10-ға дейін</option>
+              <option data-i18n="form.vol1">10-ға дейін</option>
               <option>10–30</option>
               <option>30–100</option>
               <option>100–300</option>
-              <option>300-ден көп</option>
+              <option data-i18n="form.vol5">300-ден көп</option>
             </select>
           </div>
 
-          <button class="btn btn--primary btn--block" type="submit">Өтініш қалдыру</button>
-          <p class="form__note">Жіберу арқылы сіз деректеріңізді өңдеуге келісім бересіз.</p>
+          <button class="btn btn--primary btn--block" type="submit" data-i18n="form.submit">Өтініш қалдыру</button>
+          <p class="form__note" data-i18n="form.note">Жіберу арқылы сіз деректеріңізді өңдеуге келісім бересіз.</p>
         </div>
 
         <div class="form__ok">
           <span class="check">✓</span>
-          <h3>Өтінішіңіз қабылданды</h3>
-          <p class="small muted" style="margin-top:8px">Жақын арада көрсетілген нөмірге хабарласамыз. Рақмет!</p>
+          <h3 data-i18n="form.okTitle">Өтінішіңіз қабылданды</h3>
+          <p class="small muted" style="margin-top:8px" data-i18n="form.okText">Жақын арада көрсетілген нөмірге хабарласамыз. Рақмет!</p>
         </div>
       </form>
     </div>
@@ -718,32 +728,32 @@ invoice = r.<span class="c-fn">json</span>()
     <div class="footer__grid">
       <div class="footer__about">
         <a href="#" class="logo"><span class="logo__mark">A</span><span>ApiPay<span class="logo__dot">.kz</span></span></a>
-        <p>Қазақстандық бизнеске арналған Kaspi Pay төлемдерін автоматтандыратын REST API: шот, вебхук, чек, қайтару.</p>
+        <p data-i18n="foot.about">Қазақстандық бизнеске арналған Kaspi Pay төлемдерін автоматтандыратын REST API: шот, вебхук, чек, қайтару.</p>
       </div>
 
       <div>
-        <h4>Өнім</h4>
+        <h4 data-i18n="foot.hProduct">Өнім</h4>
         <ul>
-          <li><a href="#features">Мүмкіндіктер</a></li>
-          <li><a href="#pricing">Тарифтер</a></li>
-          <li><a href="#integrations">Интеграциялар</a></li>
-          <li><a href="#how">Қалай жұмыс істейді</a></li>
+          <li><a href="#features"     data-i18n="nav.features">Мүмкіндіктер</a></li>
+          <li><a href="#pricing"      data-i18n="nav.pricing">Тарифтер</a></li>
+          <li><a href="#integrations" data-i18n="nav.integrations">Интеграциялар</a></li>
+          <li><a href="#how"          data-i18n="nav.how">Қалай жұмыс істейді</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Әзірлеушілерге</h4>
+        <h4 data-i18n="foot.hDev">Әзірлеушілерге</h4>
         <ul>
           <!-- АУЫСТЫРЫҢЫЗ: нақты сілтемелер -->
-          <li><a href="https://apipay.kz/kaspi-api">API құжаттамасы</a></li>
-          <li><a href="https://github.com/bazarbaykz/apipay-docs">Код мысалдары</a></li>
-          <li><a href="https://apipay.kz/kaspi-pay-1c">1С интеграциясы</a></li>
-          <li><a href="https://apipay.kz/kaspi-pay-integration">Сайтқа қосу</a></li>
+          <li><a href="https://apipay.kz/kaspi-api" data-i18n="foot.d1">API құжаттамасы</a></li>
+          <li><a href="https://github.com/bazarbaykz/apipay-docs" data-i18n="foot.d2">Код мысалдары</a></li>
+          <li><a href="https://apipay.kz/kaspi-pay-1c" data-i18n="foot.d3">1С интеграциясы</a></li>
+          <li><a href="https://apipay.kz/kaspi-pay-integration" data-i18n="foot.d4">Сайтқа қосу</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Байланыс</h4>
+        <h4 data-i18n="foot.hContact">Байланыс</h4>
         <ul>
           <!-- АУЫСТЫРЫҢЫЗ: нақты байланыс деректері -->
           <li><a href="tel:+77000000000">+7 (700) 000-00-00</a></li>
@@ -754,18 +764,19 @@ invoice = r.<span class="c-fn">json</span>()
       </div>
     </div>
 
-    <p class="disclaimer">
+    <p class="disclaimer" data-i18n="foot.disclaimer">
       <b>Ескерту.</b> ApiPay — сіздің Kaspi Pay аккаунтыңыздың үстінде жұмыс істейтін тәуелсіз сервис.
       Біз банк емеспіз және Kaspi Bank-тің ресми серіктесі емеспіз. Ақша тікелей сіздің Kaspi Pay аккаунтыңызға түседі.
     </p>
 
     <div class="footer__bottom">
-      <span>© <span id="year">2026</span> ApiPay.kz — барлық құқық қорғалған</span>
-      <span><a href="#">Құпиялылық саясаты</a> · <a href="#">Жария оферта</a></span>
+      <span data-i18n="foot.rights">© <span id="year">2026</span> ApiPay.kz — барлық құқық қорғалған</span>
+      <span><a href="#" data-i18n="foot.privacy">Құпиялылық саясаты</a> · <a href="#" data-i18n="foot.offer">Жария оферта</a></span>
     </div>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

@@ -6,6 +6,8 @@
   'use strict';
 
   var CONFIG = {
+    // Браузер тілі орысша болса, бетті автоматты RU тілінде ашу керек пе?
+    AUTO_LANG: false,
     // Лид формасы жіберілетін мекенжай. Бос болса — тек "рақмет" экраны көрсетіледі.
     // Мысал: '/api/leads' немесе Bitrix24/amoCRM вебхугы.
     FORM_ENDPOINT: '',
@@ -25,6 +27,58 @@
 
   var nf = new Intl.NumberFormat('ru-RU');
   function tenge(n) { return nf.format(Math.round(n)) + ' ₸'; }
+
+  /* ---------- Тіл ауыстыру (KZ / RU) ---------- */
+  var DICT = (window.APIPAY_I18N || { ru: {}, kk: {} });
+  var STORE_KEY = 'apipay_lang';
+  var lang = 'kk';
+
+  // Қазақша мәтін HTML-де тұр — оны есте сақтап қоямыз.
+  var base = {};
+  $$('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    var attr = el.getAttribute('data-i18n-attr');
+    if (base[key] === undefined) {
+      base[key] = attr ? el.getAttribute(attr) : el.innerHTML;
+    }
+  });
+
+  function t(key) {
+    var pack = DICT[lang] || {};
+    if (pack[key] !== undefined) return pack[key];
+    return (DICT.kk && DICT.kk[key] !== undefined) ? DICT.kk[key] : (base[key] || '');
+  }
+
+  function setLang(next, save) {
+    lang = (next === 'ru') ? 'ru' : 'kk';
+
+    $$('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      var attr = el.getAttribute('data-i18n-attr');
+      var val = (lang === 'kk') ? base[key] : ((DICT.ru && DICT.ru[key]) || base[key]);
+      if (val === undefined) return;
+      if (attr) { el.setAttribute(attr, val); } else { el.innerHTML = val; }
+    });
+
+    document.documentElement.lang = lang;
+    var ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', lang === 'ru' ? 'ru_RU' : 'kk_KZ');
+
+    $$('.lang__btn').forEach(function (btn) {
+      btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
+    });
+
+    if (save) {
+      try { localStorage.setItem(STORE_KEY, lang); } catch (e) { /* құпия режим */ }
+    }
+    document.dispatchEvent(new CustomEvent('apipay:lang', { detail: lang }));
+  }
+
+  $$('.lang__btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setLang(btn.getAttribute('data-lang'), true);
+    });
+  });
 
   /* ---------- Жылжығанда header көлеңкесі ---------- */
   var header = $('#header');
@@ -90,7 +144,7 @@
       if (!active || !navigator.clipboard) return;
       navigator.clipboard.writeText(active.innerText).then(function () {
         var prev = copyBtn.textContent;
-        copyBtn.textContent = 'Көшірілді ✓';
+        copyBtn.textContent = t('js.copied');
         setTimeout(function () { copyBtn.textContent = prev; }, 1800);
       });
     });
@@ -116,6 +170,14 @@
     });
   });
 
+  document.addEventListener('apipay:lang', function () {
+    var openQa = $('.qa.is-open');
+    if (openQa) {
+      var body = $('.qa__a', openQa);
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  });
+
   /* ---------- Үнем есептегіші ---------- */
   var cnt = $('#cnt'), avg = $('#avg'), mins = $('#min');
   if (cnt && avg && mins) {
@@ -133,7 +195,7 @@
       for (var i = 0; i < CONFIG.PLANS.length; i++) {
         if (perDay <= CONFIG.PLANS[i].limit) return CONFIG.PLANS[i];
       }
-      return { name: 'Жеке шарт', price: CONFIG.PLANS[CONFIG.PLANS.length - 1].price };
+      return { name: t('js.customPlan'), price: CONFIG.PLANS[CONFIG.PLANS.length - 1].price };
     };
 
     var recalc = function () {
@@ -152,14 +214,15 @@
       out.turnover.textContent  = tenge(turnover);
       out.fee.textContent       = tenge(fee);
       out.planPrice.textContent = tenge(plan.price);
-      out.hours.textContent     = nf.format(Math.round(hours)) + ' сағат';
+      out.hours.textContent     = nf.format(Math.round(hours)) + ' ' + t('js.hours');
       out.save.textContent      = tenge(save);
-      out.planName.textContent  = plan.name + (plan.limit ? ' · күніне ' + plan.limit + ' шотқа дейін' : '');
+      out.planName.textContent  = plan.name + (plan.limit ? t('js.planUpTo').replace('{n}', plan.limit) : '');
     };
 
     [cnt, avg, mins].forEach(function (el) {
       el.addEventListener('input', recalc);
     });
+    document.addEventListener('apipay:lang', recalc);
     recalc();
   }
 
@@ -200,14 +263,14 @@
       if (CONFIG.FORM_ENDPOINT) {
         var btn = $('button[type="submit"]', form);
         btn.disabled = true;
-        btn.textContent = 'Жіберілуде…';
+        btn.textContent = t('js.sending');
         fetch(CONFIG.FORM_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         }).then(done).catch(function () {
           btn.disabled = false;
-          btn.textContent = 'Қайта жіберу';
+          btn.textContent = t('js.retry');
         });
       } else {
         // Бэкенд жалғанбаған: деректі консольге шығарып, алғыс экранын көрсетеміз.
@@ -222,6 +285,16 @@
   }
 
   /* ---------- Ағымдағы жыл ---------- */
-  var year = $('#year');
-  if (year) year.textContent = new Date().getFullYear();
+  function setYear() {
+    var year = $('#year');
+    if (year) year.textContent = new Date().getFullYear();
+  }
+  document.addEventListener('apipay:lang', setYear);
+
+  /* ---------- Бастапқы тіл ---------- */
+  var saved = null;
+  try { saved = localStorage.getItem(STORE_KEY); } catch (e) { /* құпия режим */ }
+  var initial = saved || (CONFIG.AUTO_LANG && /^ru\b/i.test(navigator.language || '') ? 'ru' : 'kk');
+  setLang(initial, false);
+  setYear();
 })();
